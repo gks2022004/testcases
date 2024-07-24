@@ -1,10 +1,10 @@
 # Assignment
 
 1. Used React.js for frontend.
-2. For the backend, I have uses the Flask and socket.io 
-3. Made REST API and integrate it with the postgresql to fetch the data from table "testcases"
-   using methods like GET,POST,PUT and DELETE.
-4. Implement real-time data synchronization between the web page and the database using flask cors and socket.io  
+2. For the backend, I have used the Flask and socket.io 
+3. Made REST API and integrated it with PostgreSQL to fetch the data from table "testcases"
+   using methods like GET, POST, PUT, and DELETE.
+4. Implement real-time data synchronization between the web page and the database using Flask Cors and socket.io  
 5. Display the retrieved data on the web page, following the provided UI design image.
 
 
@@ -15,12 +15,13 @@
 - Git clone the repository
   `git clone https://github.com/gks2022004/testcases.git`
   
-- Change directory to frontend and do
+- Change the directory to frontend and do
    `npm install`
 then `npm run dev`
 
-- Then change directory to backend and use these commands
+- Then change the directory to the backend and use these commands
   `pip install Flask Flask-SQLAlchemy Flask-SocketIO psycopg2-binary`
+  `pip install flask-cors`
 after this use `python app.py`
 
 - Now your web application will run and you can use it.
