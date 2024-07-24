@@ -9,3 +9,21 @@
 
 
 ![image](https://github.com/user-attachments/assets/840a2468-9d82-4e52-b208-3ee935f135b1)
+
+# How to run 
+
+- Git clone the repository
+  `git clone https://github.com/gks2022004/testcases.git`
+  
+- Change directory to frontend and do
+   `npm install`
+then `npm run dev`
+
+- Then change directory to backend and use these commands
+  `pip install Flask Flask-SQLAlchemy Flask-SocketIO psycopg2-binary`
+after this use `python app.py`
+
+- Now your web application will run and you can use it.
+
+## NOTE: 
+### Don't forget to add the `SQLALCHEMY_DATABASE_URI` in backend env file and `VITE_BACKEND_URL=http://localhost:5000` in frontend env file
