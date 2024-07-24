@@ -1,0 +1,1 @@
+SQLALCHEMY_DATABASE_URI=enter your postgresql database uri
