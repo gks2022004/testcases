@@ -3,7 +3,7 @@ import axios from 'axios';
 import io from 'socket.io-client';
 import './App.css';
 
-const socket = io('http://localhost:5000');
+const socket = io(import.meta.env.VITE_BACKEND_URL);
 
 function App() {
   const [testcases, setTestcases] = useState([]);
@@ -38,7 +38,7 @@ function App() {
 
   const fetchTestcases = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/testcases');
+      const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/testcases`);
       setTestcases(response.data.testcases);
       setAllTestcases(response.data.testcases);
     } catch (error) {
@@ -75,7 +75,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/testcases', newTestcase);
+      await axios.post(`${import.meta.env.VITE_BACKEND_URL}/testcases`, newTestcase);
       setNewTestcase({ name: '', description: '', status: false });
     } catch (error) {
       console.error('Error creating testcase:', error);
@@ -84,7 +84,7 @@ function App() {
 
   const handleUpdate = async (id, updatedTestcase) => {
     try {
-      await axios.put(`http://localhost:5000/testcases/${id}`, updatedTestcase);
+      await axios.put(`${import.meta.env.VITE_BACKEND_URL}/testcases/${id}`, updatedTestcase);
     } catch (error) {
       console.error('Error updating testcase:', error);
     }
@@ -92,7 +92,7 @@ function App() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/testcases/${id}`);
+      await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/testcases/${id}`);
     } catch (error) {
       console.error('Error deleting testcase:', error);
     }
@@ -108,7 +108,7 @@ function App() {
             value={searchTerm}
             onChange={handleSearchChange}
             placeholder="Search test cases"
-            style={{ marginRight: '10px', padding: '5px',height:'25px', width: '350px' }}
+            style={{ marginRight: '10px', padding: '5px', height: '25px', width: '350px' }}
           />
           <button
             onClick={handleSearch}
